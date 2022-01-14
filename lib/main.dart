@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import './components/CardMatch.dart';
+import './screens/Encounter.dart';  
 
 void main() {
    runApp(const App());
@@ -11,13 +12,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(home: Container(
-      color: Colors.white,
-      child:  const Scaffold( 
-        body: CardMatch()
-      ),
+    return  MaterialApp(
+      home: Encounter(),  // Encounter
       
-    ),);
+    
+      
+      
+    );
   }
 }
 

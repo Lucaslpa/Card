@@ -6,8 +6,10 @@ import './ProfileInfos.dart';
 import './LikeOrRefuse.dart';
 
 class CardMatch extends StatefulWidget {
-  const  CardMatch({
+   
+    CardMatch({
     Key? key,
+    
   }) : super(key: key);
  
   @override
@@ -52,55 +54,57 @@ class _CardMatchState extends State<CardMatch> {
   @override
   Widget build(BuildContext context) {
     return Center(
-           child: Padding(
-              padding: const EdgeInsets.all(8),
-             child: Container(
-               width: MediaQuery.of(context).size.width ,
-             child: Stack(
-               children: [
-                  Positioned(
-                    bottom:  MediaQuery.of(context).size.height * 0.15,
-                    child: const ProfileInfos(
-                              name: 'João',
-                              age: '20',
-                              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                            ),
-                  ),
-                  TopBarPicCurrentShower(
-                        currentIndex: currentPic,
-                        pictures: pictures,
-                      ),
-                  Positioned(
-                    left: MediaQuery.of(context).size.width * 0.13,
-                    top: MediaQuery.of(context).size.height * 0.12,
-                    child: status == 'like' ? const  LikeOrRefuse(status: 'like') : Container(),
-                  ),
-                   Positioned(
-                    right: MediaQuery.of(context).size.width * 0.13,
-                    top: MediaQuery.of(context).size.height * 0.12,
-                    child: status == 'deslike' ? const  LikeOrRefuse(status: 'deslike') : Container(),
-                  ),
-                ChangePicHandler(
-                  nextPic: _nextPic,
-                  backPic: _backPic,
-                ), 
-                   Positioned(
-                    bottom: 0, 
-                    child: LikeDeslike(onDeslike: _deslike, onLike: _like)
-                    )
-               ],
-             ),
-             height: 500,
-              decoration:  BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(8)),
-                image: DecorationImage(
-                  image: NetworkImage(pictures.elementAt(currentPic)),
-                  fit: BoxFit.cover,
-                ),
-              ),
+           child: Container(
+          
+           child: Column(
+             children:  [Expanded(
+               child: Stack(
+                 children: [
+                    Column(
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+                      children: [
+                      TopBarPicCurrentShower(
+                          currentIndex: currentPic,
+                          pictures: pictures,
+                        ),
+                      const ProfileInfos(
+                                name: 'João',
+                                age: '20',
+                                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                              ),
+                    ],),
+                   
+                    
+                    Positioned(
+                      left: MediaQuery.of(context).size.width * 0.13,
+                      top: MediaQuery.of(context).size.height * 0.12,
+                      child: status == 'like' ? const  LikeOrRefuse(status: 'like') : Container(),
+                    ),
+                     Positioned(
+                      right: MediaQuery.of(context).size.width * 0.13,
+                      top: MediaQuery.of(context).size.height * 0.12,
+                      child: status == 'deslike' ? const  LikeOrRefuse(status: 'deslike') : Container(),
+                    ),
+                  ChangePicHandler(
+                    nextPic: _nextPic,
+                    backPic: _backPic,
+                  ), 
+                 ],
                ),
+             ),
+             LikeDeslike(onDeslike: _deslike, onLike: _like)
+             ]
            ),
+           height: 500,
+            decoration:  BoxDecoration(
+              color: Colors.white,
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              image: DecorationImage(
+                image: NetworkImage(pictures.elementAt(currentPic)),
+                fit: BoxFit.cover,
+              ),
+            ),
+             ),
          );
   }
 }

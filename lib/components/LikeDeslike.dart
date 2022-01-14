@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 var back =  Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.yellow,
@@ -21,7 +21,7 @@ var back =  Container(
    splashColor: Colors.redAccent,
    onTap: onDeslike,
    child: Container(
-            padding: const EdgeInsets.all(11),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.red,
@@ -38,7 +38,7 @@ var back =  Container(
 ); 
 
 var superLike = Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.blue,
@@ -56,7 +56,7 @@ var superLike = Container(
  like(void Function() onDeslike) =>  GestureDetector(
    onTap: onDeslike,
    child: Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.green,
@@ -73,7 +73,7 @@ var superLike = Container(
  );
 
 var boost =  Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.purple,
@@ -99,7 +99,7 @@ class LikeDeslike extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
        padding: const EdgeInsets.only(top: 24, bottom: 10),
-      width:  MediaQuery.of(context).size.width - 15  ,
+       width:  MediaQuery.of(context).size.width - 35 ,
        child: Row(
        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
        children:  <Widget>[
