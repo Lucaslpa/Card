@@ -14,10 +14,6 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: Encounter(),  // Encounter
-      
-    
-      
-      
     );
   }
 }
