@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/screens/Encounter.dart';
-import 'package:swipe_cards/swipe_cards.dart';
-import '../components/CardMatch/index.dart'; 
-import './Another.dart';
+import 'Explorer.dart';
+import 'Like.dart';
 
 
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
-
   @override
   _HomeState createState() => _HomeState();
 }
@@ -15,7 +13,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final PageController controller = PageController();
   int currentPage = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +55,6 @@ class _HomeState extends State<Home> {
                     currentPage = 0;
                   });
                   });       
-
                 },
               ),
               IconButton(
@@ -74,11 +70,15 @@ class _HomeState extends State<Home> {
               ),
                IconButton(
                 icon: const Icon(Icons.star_rounded),
-                color: Colors.grey.shade500,
+                color: currentPage == 2 ? Colors.yellow.shade600 : Colors.grey,
                 onPressed: () {
+                  controller.animateToPage(2, duration: const Duration(milliseconds: 250) , curve: Curves.easeInOutSine).then((_) {
+                    setState(() {
+                    currentPage = 2;
+                  });
+                  });
                 },
               ),
-
                IconButton(
                 icon: const Icon(Icons.chat),
                 color: Colors.grey.shade500,
@@ -96,9 +96,10 @@ class _HomeState extends State<Home> {
           physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.horizontal,
           controller: controller ,
-          children: const [
-              Encounter(),
-              Another () 
+          children:  [
+              const Encounter(),
+              const Another (),
+              Likes() 
           ]
         )
        );

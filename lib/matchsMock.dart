@@ -10,13 +10,12 @@ class MatchModel {
     required this.name,
     required this.age,
     required this.description,
-    
   });
 }
 
 
 
-List MatchsMocks = [
+List MatchsMocks = const [
  MatchModel(age: '21', description: 'Lorem Ipsum ', name: 'Steve Rogers', pics: [
    'https://observatoriodocinema.uol.com.br/wp-content/uploads/2020/06/Captain-America.jpg',
    'https://uploads.metropoles.com/wp-content/uploads/2020/09/12170743/WhatsApp-Image-2020-09-12-at-17.05.41-600x400.jpeg',

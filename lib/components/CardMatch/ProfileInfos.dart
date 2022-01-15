@@ -23,7 +23,14 @@ class ProfileInfos extends StatelessWidget {
                   overflow: TextOverflow.ellipsis  ,
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 10,
+                      color: Colors.black,
+                      offset: Offset(0, 0),
+                    ),
+                  ], 
                 ),
                 ),
                 const SizedBox(width: 10,),
@@ -32,6 +39,13 @@ class ProfileInfos extends StatelessWidget {
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 10,
+                      color: Colors.black,
+                      offset: Offset(0, 5),
+                    ),
+                  ], 
                 ),
                 )
              ],
@@ -41,7 +55,14 @@ class ProfileInfos extends StatelessWidget {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Colors.white
+            color: Colors.white,
+            shadows: [
+              Shadow(
+                color: Colors.black,
+                blurRadius: 21,
+                offset: Offset(0, 5),
+              ),
+            ], 
           ),
           )
          ],

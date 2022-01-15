@@ -16,7 +16,6 @@ class _EncounterState extends State<Encounter> {
   MatchEngine _matchEngine = MatchEngine();
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
-
   @override
   void initState() {
     for (int i = 0; i < MatchsMocks.length; i++) {

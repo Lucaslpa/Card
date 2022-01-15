@@ -4,14 +4,12 @@ import 'package:flutter/services.dart';
 import './screens/Encounter.dart';  
 import './screens/Home.dart';
 
-
 void main() {
    runApp(const App());
 }
 
 class App extends StatelessWidget {
   const App({ Key? key }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
@@ -31,7 +29,7 @@ class App extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home:  Home(),  // Encounter
+      home: const Home(),  // Encounter
     );
   }
 }

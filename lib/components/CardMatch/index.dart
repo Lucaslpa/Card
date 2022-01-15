@@ -20,25 +20,18 @@ class CardMatch extends StatefulWidget {
 class _CardMatchState extends State<CardMatch> {
    int currentPic = 0;
 
-
-
-
    void _nextPic(){
     setState(() {
       if(widget.match.pics.length - 1 == currentPic) return;
       currentPic++; 
     });
    }  
-
     void _backPic(){
     setState(() {
       if(currentPic == 0)return;
       currentPic--;
     });
    } 
-
-  
-
   @override
   Widget build(BuildContext context) {
     return Center(
