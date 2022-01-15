@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/screens/Encounter.dart';
+import 'package:projeto/screens/Messages.dart';
 import 'Explorer.dart';
 import 'Like.dart';
 
@@ -81,8 +82,13 @@ class _HomeState extends State<Home> {
               ),
                IconButton(
                 icon: const Icon(Icons.chat),
-                color: Colors.grey.shade500,
+                color: currentPage == 3 ? Colors.redAccent : Colors.grey,
                 onPressed: () {
+                  controller.animateToPage(3, duration: const Duration(milliseconds: 250) , curve: Curves.easeInOutSine).then((_) {
+                    setState(() {
+                    currentPage = 3;
+                  });
+                  });
                 },
               ),
             ],
@@ -96,10 +102,11 @@ class _HomeState extends State<Home> {
           physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.horizontal,
           controller: controller ,
-          children:  [
-              const Encounter(),
-              const Another (),
-              Likes() 
+          children:  const [
+              Encounter(),
+              Another (),
+              Likes(),
+              Messages()
           ]
         )
        );
