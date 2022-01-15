@@ -19,6 +19,8 @@ class ProfileInfos extends StatelessWidget {
              children:  [
                 Text(name,
                 style: const TextStyle(
+                
+                  overflow: TextOverflow.ellipsis  ,
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
                   color: Colors.white
